@@ -40,4 +40,25 @@ class CaesarCipherAttack {
         }
         return words;
     }
+
+    public static void main(String[] args) {
+        Scanner inputScanner = new Scanner(System.in);
+
+        System.out.print("Jep tekstin e enkriptuar: ");
+        String encryptedText = inputScanner.nextLine();
+        String dictionaryFile = "src/TextFile.txt";
+
+        List<String> dictionary = loadDictionary(dictionaryFile);
+
+        for (int shift = 1; shift < ALPHABET_SIZE; shift++) {
+            String decryptedText = decrypt(encryptedText, shift);
+            if (containsKnownWords(decryptedText, dictionary)) {
+                System.out.println("Mundësi për kyçin: " + shift);
+                System.out.println("Teksti i dekriptuar: " + decryptedText);
+                break;
+            }
+        }
+
+        inputScanner.close();//mbyllim scanerin
+    }
 }
