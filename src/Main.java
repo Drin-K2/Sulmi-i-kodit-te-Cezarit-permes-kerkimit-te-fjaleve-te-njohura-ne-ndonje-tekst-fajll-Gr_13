@@ -18,4 +18,23 @@ class CaesarCipherAttack {
         }
         return result.toString();
     }
+
+    public static List<String> loadDictionary(String filePath) {
+        List<String> words = new ArrayList<>();
+        Scanner scanner = null;
+        try {
+            File file=new File(filePath);
+            scanner = new Scanner(file);
+            while (scanner.hasNext()) {
+                words.add(scanner.next().toLowerCase());
+            }
+        } catch (IOException e) {
+            System.out.println("Gabim në leximin e skedarit: " + e.getMessage());
+        } finally {
+            if (scanner != null) {
+                scanner.close();
+            }
+        }
+        return words;
+    }
 }
