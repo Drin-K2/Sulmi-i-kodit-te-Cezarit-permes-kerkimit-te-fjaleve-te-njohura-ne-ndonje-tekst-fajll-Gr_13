@@ -41,6 +41,14 @@ class CaesarCipherAttack {
         return words;
     }
 
+  public static boolean containsKnownWords(String text, List<String>dictionary) {
+    for (String word : text.toLowerCase().split("[^a-zA-Z0-9']+"))
+      {
+        if(dictionary.contains(word)) return true;
+      }
+    return false;
+  }
+  
     public static void main(String[] args) {
         Scanner inputScanner = new Scanner(System.in);
         String encryptedText = "";
