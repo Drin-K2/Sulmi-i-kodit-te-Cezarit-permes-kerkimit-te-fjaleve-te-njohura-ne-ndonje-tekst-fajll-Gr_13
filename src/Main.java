@@ -43,11 +43,35 @@ class CaesarCipherAttack {
 
     public static void main(String[] args) {
         Scanner inputScanner = new Scanner(System.in);
-
-        System.out.print("Jep tekstin e enkriptuar: ");
-        String encryptedText = inputScanner.nextLine();
+        String encryptedText = "";
+  
+        System.out.println("Zgjedh një opsion:");
+        System.out.println("1. Shkruaj tekstin e enkriptuar");
+        System.out.println("2. Importo tekstin nga një skedar");
+        System.out.print("Opsioni: ");
+        int choice = inputScanner.nextInt();
+        inputScanner.nextLine(); // konsumon newline që mbetet
+      
+        if (choice == 1) {
+                System.out.print("Jep tekstin e enkriptuar: ");
+                encryptedText = inputScanner.nextLine();
+          } else if (choice == 2) {
+                System.out.print("Jep rrugën e skedarit të tekstit të enkriptuar (shembull: encrypted.txt): ");
+                String filePath = inputScanner.nextLine();
+                try {
+                    encryptedText = new String(Files.readAllBytes(new File(filePath).toPath()));
+                } catch (IOException e) {
+                    System.out.println("Gabim gjatë leximit të skedarit: " + e.getMessage());
+                    inputScanner.close();
+                    return;
+                }
+          } else {
+                System.out.println("Opsion i pavlefshëm!");
+                inputScanner.close();
+                return;
+        }
+        
         String dictionaryFile = "src/TextFile.txt";
-
         List<String> dictionary = loadDictionary(dictionaryFile);
 
         for (int shift = 1; shift < ALPHABET_SIZE; shift++) {
