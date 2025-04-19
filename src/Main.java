@@ -1,3 +1,4 @@
+import java.nio.file.Files;
 import java.util.*;
 import java.io.*;
 
@@ -58,7 +59,7 @@ class CaesarCipherAttack {
         System.out.println("2. Importo tekstin nga një skedar");
         System.out.print("Opsioni: ");
         int choice = inputScanner.nextInt();
-        inputScanner.nextLine(); // konsumon newline që mbetet
+        inputScanner.nextLine();
       
         if (choice == 1) {
                 System.out.print("Jep tekstin e enkriptuar: ");
@@ -91,6 +92,6 @@ class CaesarCipherAttack {
             }
         }
 
-        inputScanner.close();//mbyllim scanerin
+        inputScanner.close();
     }
 }

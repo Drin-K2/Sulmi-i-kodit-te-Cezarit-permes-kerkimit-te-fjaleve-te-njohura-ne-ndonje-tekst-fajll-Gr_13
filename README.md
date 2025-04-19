@@ -1,6 +1,6 @@
 # Sulmi i Kodit te Cezarit permes Kerkimit te Fjaleve te Njohura ne ndonje Tekst File - Grupi 13
 
-Ky projekt simulon nje sulm ndaj Kodit te Cezarit duke perdorur nje liste fjalesh te njohura te ruajtura ne nje fjall tekstual. Programi perpiqet te gjeje çelsin e enkriptimit duke testuar te gjitha zhvendosjet (1-25) dhe duke kontrolluar nese ndonje variant i dekriptuar permban fjale te njohura.
+Ky projekt simulon nje sulm ndaj Kodit te Cezarit duke perdorur nje liste fjalesh te njohura te ruajtura ne nje fajll tekstual. Programi perpiqet te gjeje çelsin e enkriptimit duke testuar te gjitha zhvendosjet (1-25) dhe duke kontrolluar nese ndonje variant i dekriptuar permban fjale te njohura.
 
 ## Perdorimi
 1. Zgjidhni njerin nga opsinet:
